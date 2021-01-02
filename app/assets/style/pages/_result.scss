@@ -1,0 +1,56 @@
+.dropdown_content{
+    text-align:left;
+}
+.text_md-left{
+    @include pad{
+        text-align: center;
+    }
+}
+//modia
+.text_xs {font-size: $font-size_xs;}//12px
+.hotel_img{ 
+    width: 255px;
+    height: 175px;
+    @media (max-width:992px) {
+        width: 155px;
+        height: 155px;
+    }
+}
+.media_point{
+    font-size: $font-size_1;//24px
+    @media (max-width:"1200px") {
+        font-size:$font-size_m;//16px
+    }
+}   
+.media_cut-line{
+    margin: 24px 0px;
+    @include pad{
+       border-bottom: 2px solid #F1F0F8;
+       margin:0;
+    }
+}
+.sale_price{
+    font-size: $font-size_m;//16px
+    @media (max-width:"1200px") {
+        font-size:$font-size_s;//14px
+    }
+    @include mobile{
+        font-size:$font-size_xs;//12px
+    }
+}
+//page
+.page_btn{
+    padding: 8px 14px;
+    font-weight: bold;
+    &.active{background: #fff;border-radius: 20%;}
+    &:hover{
+        background: #fff;
+        border-radius: 20%;
+    }
+}
+
+
+
+
+
+

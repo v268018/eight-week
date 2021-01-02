@@ -1,0 +1,13 @@
+@import 'vendors/bs4/bootstrap';
+@import 'base/variables';
+@import 'utils/mixin';
+@import 'utils/util';
+@import 'component/all_component';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'pages/index';
+@import 'pages/result';
+@import 'pages/hotel';
+@import 'pages/details';
+@import 'pages/login';
+@import 'pages/member';

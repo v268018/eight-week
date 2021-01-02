@@ -1,0 +1,73 @@
+//font
+.text_xxl{font-size: $font-size_xx1;}//48px
+.text_xl {font-size: $font-size_x1;}//32px
+.text_l  {font-size: $font-size_1;}//24px
+.text_m  {font-size: $font-size_m;}//16px
+.text_s  {font-size: $font-size_s;}//14px
+.text_xs {font-size: $font-size_xs;}//12px
+.text_xxs {font-size: $font-size_xxs;}//10px
+.text_nowrap{white-space:nowrap;}//不換行
+.title{
+    font-size:$font-size_x1;//32px
+    @include iphone{
+        font-size: $font-size_1; //24px
+    }
+}
+.subtitle,.subtext{
+    @include iphone{
+        font-size: $font-size_s; //14px
+    }
+}
+//bg
+.bg_cover{background-size:cover;background-position: center center;}
+.bg_md_transparent{
+    @media(min-width:768px){
+        background-color: transparent !important;
+    }
+}
+//img
+.img_cover{object-fit: cover;}
+//btn
+.btn_sm-block{
+    @include iphone{
+        width: 100%;
+    }
+}
+//form
+.form_btn{
+    padding: 16px 32px;
+}
+//border
+.border_md_0{
+    @media(min-width:768px){
+        border: 0px !important;
+    }
+}
+
+.border_Bottom{
+    border-bottom: 1px solid #fff;
+ }
+//rounded
+.rounded_top-left{
+    border-top-left-radius: 0.25rem !important;
+}
+.rounded_md-left{
+    @media(min-width:768px){
+        border-radius:0rem !important;
+        border-top-left-radius: 0.25rem !important;
+        border-bottom-left-radius: 0.25rem !important;
+    }
+}
+//star-size
+.star_fz{font-size: 18px;}
+//width
+.w_lg-50{
+    @media(min-width:992px){
+        width:50% !important;        
+    }
+}
+.w_lg-100{
+    @media(min-width: 992px){
+        width:100% !important;        
+    }
+}

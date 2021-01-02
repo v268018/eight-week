@@ -1,0 +1,76 @@
+//search
+.search{
+    margin-top: -50px;
+    margin-bottom: 66px;
+    z-index:1;
+}
+//index_Choices
+.index_Choices .nav-link{
+    font-size: $font-size_1;//24px 
+    font-weight:bold;
+    @include mobile{
+        font-size: 20px;
+    }
+}
+//輪播
+.card_img-top{
+    height: 175px;
+    object-fit: cover;
+}
+//Top Choices -navbar
+.nav-link{color:#00000099;}
+.nav-tabs .nav-link:hover,.nav-tabs .nav-link:focus{
+    border-color: #6C51E2;
+}
+.nav-link.active,.nav-link:hover{
+    border-bottom:2px solid #6C51E2;
+}
+//index_popular
+.index_popular .card{position: relative;}
+.index_popular .card::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    background: transparent linear-gradient(270deg, #00000000 0%, #000000 100%);
+    border-radius: 0.5rem;
+}
+//Popular Destinations
+.card_image-overlays{
+    height: 78px;
+    object-fit: cover;
+}
+//Get Inspiration
+.index_Get-Inspiration{
+    margin-bottom: 72px;
+    .card-img,.card-img-top{border-radius:0.5rem;}
+    .card_img-inspiration{
+    height: 263px;
+    object-fit: cover;
+    @include pad{height: 158px;}
+    @include mobile{height: 181px;}
+    }
+}
+//footer_banner
+.footer_banner{
+    padding-top:92px;
+    padding-bottom:92px;
+    .banner_title{
+        font-size:$font-size_xx1;//48px
+        @include pad{
+            font-size:$font-size_1;//24px
+        }
+    }
+    .form-control{
+        padding:16px 0px 16px 21px;
+        height: auto;
+    }
+    .subscribe_btn{padding:17px 32px;}
+}
+
+
+
+   
+   

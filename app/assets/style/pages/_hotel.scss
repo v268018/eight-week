@@ -1,0 +1,35 @@
+.photos-xl{
+   background-image: url("../images/week8/Rachada1.jpg");
+   height: 434px;
+   @media (max-width:992px){height: 268px;}
+}
+.photos-l{
+    background-image: url("../images/week8/Rachada2.jpg");
+    height: 213px;
+    @media (max-width:992px){height: 132px;}
+}
+.photos_m-item{
+    background-image: url("../images/week8/Rachada3.jpg");
+    height: 213px;
+    @media (max-width:992px){height: 132px;}
+}
+.photos_m-subitem{
+    background-image: url("../images/week8/Rachada4.jpg");
+    height: 151px;
+    @media (max-width:992px){height: 92px;}
+}
+.photos_btn{
+    padding:14px;
+    @media (max-width:992px) {
+       font-size: 13px;
+       padding: 6px;
+   }
+}
+.carousel_img{height: 247px;}
+.room_photo{
+   width: 255px;
+   height:175px;
+   @media (max-width:992px){
+       height: 150px;
+   }
+}
