@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hotel頁面</title>
+  <!-- Open+Sans font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300;1,400;1,800&display=swap" rel="stylesheet"> 
+  <!-- Raleway font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <!-- bs4 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!-- material -->
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- material -->
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- 自用 -->
+  <link rel="stylesheet" href="./assets/style/all.css">
+  
+</head>
+
+<body>
+  <!-- header -->
+  <header class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-md navbar-light px-0">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- logo -->
+            <h1 class="mb-0">
+              <a class="navbar-brand logo" href="index.html">logo</a>
+            </h1>
+            <!-- 768以下Login -->
+            <div><a href="login.html" class="text-dark d-md-none ">Login</a></div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <!-- dropdown -->
+                <li class="nav-item mr-6">
+                  <div class="dropdown">
+                    <a class="material-icons dropdown-toggle text-dark align-middle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      language
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="#">中文</a>
+                      <a class="dropdown-item" href="#">English</a>
+                      <a class="dropdown-item" href="#">日本語</a>
+                    </div>
+                  </div>
+                  
+                </li>
+                <!-- Sign up -->
+                <li class="nav-item mr-6">
+                  <a class="text-dark " href="#">Sign up</a>
+                </li>
+                <!-- Login -->
+                <li class="nav-item">
+                  <a class="text-dark" href="login.html" tabindex="-1" aria-disabled="true">Login</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- search -->
+  <section class="bg-secondary d-none d-md-block sticky-top mb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ul class="list-unstyled d-flex bg-secondary py-4 rounded-lg mb-0">
+                    <!-- Guests -->
+                    <li class="dropdown w-100 mr-2 mr-lg-3">
+                        <button class="btn btn-block bg-white  d-flex  align-items-center text-dark-50 pl-2 pl-lg-3 py-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="material-icons mr-1 mr-lg-3"> place</span>
+                            <div class="dropdown_content">
+                                <h6 class="text-dark-70 font-weight-bold mb-0">Destination</h6>
+                                <span class="h5 text-dark-50 text_nowrap">
+                                    Bangkok, Thailand
+                                </span>
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <!-- 月曆 -->
+                    <li class="dropdown w-100 mr-2 mr-lg-3">
+                        <button class="btn btn-block bg-white d-flex align-items-center pl-3 py-2 text-dark-50 text_nowrap" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="material-icons mr-2 mr-lg-3"> date_range </span>
+                            <div class="dropdown_content w-50">
+                                <div class="d-none d-lg-block ">
+                                    <h6 class="line_separator text-dark-70 font-weight-bold  mb-0">Check-in</h6>
+                                    <span class="h5 text-dark-50">17 June</span>
+                                </div>
+                                <div class="d-md-block d-lg-none">
+                                    <h6 class="text-dark-70 font-weight-bold  mb-0">Guests</h6>
+                                    <span class="h5 text-dark-50 ">17 June - 19 June</span>
+                                </div>
+                            </div>
+                            <!-- Check-out -->
+                            <div class="dropdown_content w-50 d-none d-lg-block ">
+                                <h6 class="text-dark-70 font-weight-bold  mb-0">Check-out</h6>
+                                <span class="h5 text-dark-50">19 June</span>
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <!-- Guests -->
+                    <li class="dropdown w-100 mr-2 mr-lg-3">
+                            <button class="btn btn-block bg-white  d-flex  align-items-center text-dark-50 pl-2 pl-lg-3 py-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="material-icons mr-1 mr-lg-3"> person </span>
+                                <div class="dropdown_content">
+                                    <h6 class="text-dark-70 font-weight-bold  mb-0">Guests</h6>
+                                    <span class="h5 text-dark-50 text_nowrap">2 adults・1 room</span>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                    </li>
+                    <!-- SEARCH btn -->
+                    <li class="d-none d-md-block">
+                        <a href="result.html" class="btn form_btn btn-primary font-weight-bold">
+                            SEARCH
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!-- moblie_search -->
+  <section class="bg-secondary container-fluid  d-md-none sticky-top py-3">
+      <div class="d-flex justify-content-center align-items-center">
+        <span class="material-icons mr-2">
+            arrow_back
+        </span>
+        <div class="text_xs">
+            Bangkok・17 June - 19 June・2 adults・1 room
+        </div>
+      </div>
+  </section>
+  
+  <main>
+    <!-- pc版房型 -->
+    <section class="d-none d-md-block container pb-4">
+        <div class="row">
+            <div class="col-7 pr-1">
+                <div class="photos-xl bg_cover rounded-lg "></div>
+            </div>
+            <div class="col-5 pl-1">
+                <div class="photos-l  bg_cover rounded-lg  mb-1 mb-lg-2">   
+                </div>
+                <div class="row">
+                    <div class="col-6 pr-1">
+                        <div class="photos_m-item bg_cover rounded-lg "></div>
+                    </div>
+                    <div class="col-6 pl-1">
+                        <div class="photos_m-subitem bg_cover rounded-lg mb-1"></div>
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="#" class="btn btn-dark btn-block photos_btn font-weight-bold">See All 10 photos</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 手機板切換輪播 -->
+    <section id="carouselExampleFade" class="d-sm-block d-md-none carousel sdivde carousel-fade mb-3" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/images/week8/Rachada1.jpg" class="d-block w-100 carousel_img img-fdivud img_cover" alt="Rachada1">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/week8/Rachada2.jpg" class="d-block w-100 carousel_img img-fliud img_cover" alt="Rachada2">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/week8/Rachada3.jpg" class="d-block w-100 carousel_img img-fliud img_cover" alt="Rachada3">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </section>
+    <!-- 房型敘述 -->
+    <section>
+      <div class="container">
+        <div class="d-md-flex align-items-center">
+           <h3 class="text_xl font-weight-bold mr-3">
+            Rachada Hotel
+           </h3> 
+           <div class="d-flex align-items-center mb-2">
+              <span class="material-icons star_fz">grade</span>
+              <span class="material-icons star_fz">grade</span>
+              <span class="material-icons star_fz">grade</span>
+              <span class="material-icons star_fz">grade</span>
+              <span class="material-icons star_fz mr-1">grade</span>
+              <small class="text_s">4.0 (283)</small>
+           </div>
+        </div>
+        <p class="text_s text-primary mb-4">318 Phaya Thai Road, Ratchathewi, Phaya Thai, 10400 Bangkok, Thailand</p>
+        <p class="text-dark-50 mb-6 mb-lg-7">The Rachada Hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality mattress in a small room to large suites with bigger, higher-quality beds, a dresser, a refrigerator and other kitchen facilities, upholstered chairs, a flat screen television, and en-suite bathrooms.</p>
+        <!-- Select your room -->
+        <div class="d-none d-md-block mb-6">
+            <h4 class="text_l font-weight-bold mb-4">Select your room</h4>
+            <div>
+              <a href="#" class="btn btn-secondary">Bangkok, Thailand</a>
+              <a href="#" class="btn btn-secondary">17 June - 19 June・2 nights</a>
+              <a href="#" class="btn btn-secondary">2 adults・1 room</a>
+              <a href="details.html" class="btn text-primary font-weight-bold">EDIT DETAIL</a>
+            </div>
+        </div>  
+       
+      </div>
+    </section>
+    <!-- 選擇房型 -->
+    <section class="container pb-6 pb-lg-7">
+        <!-- room-type -->
+        <div class="d-none d-md-flex row no-gutters ">
+            <div class="col-6"><h4 class="font-weight-bold">Room Type</h4></div>
+            <div class="col-2 text-center"><h4 class="font-weight-bold mb-0">Sleeps</h4></div>
+            <div class="col-2 text-center"><h4 class="font-weight-bold mb-0">Price</h4></div>
+            <div class="col-2 text-center"><h4 class="font-weight-bold mb-0">Rooms</h4></div>
+        </div>
+        <hr class="d-none d-md-block">
+        <h3 class="d-me-none font-weight-bold mb-3">Select your room</h3>
+        <!-- room-type-list -->
+        <!-- Deluxe Double Room A -->
+        <div class="row no-gutters align-items-center border border_md_0 rounded-lg mb-2">
+            <!-- room-photos -->
+            <div class="col-md-6">
+                <div class="card">
+                  <div class="row no-gutters align-items-center">
+                      <div class="col-6 room_photo bg_cover rounded_top-left rounded_md-left "style="background-image:url(assets/images/week8/roomA.jpg)"></div>
+                      <div class="col-6">
+                        <div class="card-body pl-3">
+                            <div>
+                              <h4 class="font-weight-bold mb-0">Deluxe
+                                Double Room A
+                              </h4>
+                              <small>1 bed (Queen size)</small>
+                           
+                              <div class="d-flex flex-wrap mb-2">
+                                <!-- Wi-Fi -->
+                                <div class="d-flex  align-items-center w_lg-50 order-0 mb-1">
+                                  <span class="material-icons text_m mr-1">wifi</span>
+                                  <span class="d-none d-lg-inline-block text_s">Wi-Fi</span>
+                                </div>
+                                <!-- Room Service -->
+                                <div class="d-flex  align-items-center w_lg-50  order-5 order-lg-1 mb-1">
+                                  <span class="material-icons text_m mr-1">room_service</span>
+                                  <span class="d-none d-lg-inline-block text_s text-nowrap ">Room Service</span>
+                                </div>
+                                <!-- Breakfast -->
+                                <div class="d-flex  align-items-center w_lg-50 order-3 mb-1">
+                                  <span class="material-icons text_m mr-1">restaurant</span>
+                                  <span class="d-none d-lg-inline-block text_s">Breakfast</span>
+                                </div>
+                                <!-- Smoke Free -->
+                                <div class="d-flex  align-items-center w_lg-50 order-6 order-lg-4 mb-1">
+                                  <span class="material-icons text_m mr-1">smoke_free</span>
+                                  <span class="d-none d-lg-inline-block text_s text-nowrap">Smoke Free</span>
+                                </div>
+                                <!-- Television -->
+                                <div class="d-flex  align-items-center w_lg-100 order-2 order-lg-5 mb-1">
+                                  <span class="material-icons text_m mr-1">personal_video</span>
+                                  <span class="d-none d-lg-inline-block text_s">Television</span>
+                                </div>
+                                <!-- Air Conditioner -->
+                                <div class="d-flex  align-items-center w_lg-100 order-4 order-lg-6">
+                                  <span class="material-icons text_m mr-1">ac_unit</span>
+                                  <span class="d-none d-lg-inline-block text_s">Air Conditioner</span>
+                                </div>
+                              </div>
+                              <div class="d-md-none">
+                                <span class="material-icons">person</span>
+                                <span class="material-icons">person</span>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>   
+                </div>    
+            </div>
+            <div class="col-2 text-center d-none d-md-block">
+              <span class="material-icons">person</span>
+              <span class="material-icons">person</span>
+            </div>
+            <!-- room-add and price -->
+            <div class="col-md-4">
+              <div class="row no-gutters bg-secondary bg_md_transparent  rounded-bottom">
+                    <div class="col-6 text-center order-1 order-md-0">
+                        <div>
+                          <del class="text_s">TWD 1,600</del>
+                          <h6 class="text_m font-weight-bold mb-0 ">
+                            TWD 
+                            <span class="text-primary">1,490</span>
+                          </h6>
+                          <small class="d-none d-md-block">per night</small>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-between align-items-center order-0 order-md-1">
+                      <button class="material-icons btn text_l">remove</button>
+                      <span>0</span>
+                      <button class="material-icons btn text_l">add</button>
+                    </div>
+              </div>
+            </div>
+        </div>
+        <!-- 分隔線 -->
+        <hr class="d-none d-md-block">
+        <!-- Deluxe Double Room B -->
+        <div class="row no-gutters align-items-center border border_md_0 rounded-lg mb-2">
+          <!-- room-photos -->
+          <div class="col-md-6">
+            <div class="card">
+              <div class="row no-gutters align-items-center">
+                  <div class="col-6 room_photo bg_cover rounded_top-left rounded_md-left "style="background-image:url(assets/images/week8/roomB.jpg)"></div>
+                  <div class="col-6">
+                    <div class="card-body pl-3">
+                        <div>
+                          <h4 class="font-weight-bold mb-0">Deluxe
+                            Double Room A
+                          </h4>
+                          <small>1 bed (Queen size)</small>
+                       
+                          <div class="d-flex flex-wrap mb-2">
+                            <!-- Wi-Fi -->
+                            <div class="d-flex  align-items-center w_lg-50 order-0 mb-1">
+                              <span class="material-icons text_m mr-1">wifi</span>
+                              <span class="d-none d-lg-inline-block text_s">Wi-Fi</span>
+                            </div>
+                            <!-- Room Service -->
+                            <div class="d-flex  align-items-center w_lg-50  order-5 order-lg-1 mb-1">
+                              <span class="material-icons text_m mr-1">room_service</span>
+                              <span class="d-none d-lg-inline-block text_s text-nowrap ">Room Service</span>
+                            </div>
+                            <!-- Breakfast -->
+                            <div class="d-flex  align-items-center w_lg-50 order-3 mb-1">
+                              <span class="material-icons text_m mr-1">restaurant</span>
+                              <span class="d-none d-lg-inline-block text_s">Breakfast</span>
+                            </div>
+                            <!-- Smoke Free -->
+                            <div class="d-flex  align-items-center w_lg-50 order-6 order-lg-4 mb-1">
+                              <span class="material-icons text_m mr-1">smoke_free</span>
+                              <span class="d-none d-lg-inline-block text_s text-nowrap">Smoke Free</span>
+                            </div>
+                            <!-- Television -->
+                            <div class="d-flex  align-items-center w_lg-100 order-2 order-lg-5 mb-1">
+                              <span class="material-icons text_m mr-1">personal_video</span>
+                              <span class="d-none d-lg-inline-block text_s">Television</span>
+                            </div>
+                            <!-- Air Conditioner -->
+                            <div class="d-flex  align-items-center w_lg-100 order-4 order-lg-6">
+                              <span class="material-icons text_m mr-1">ac_unit</span>
+                              <span class="d-none d-lg-inline-block text_s">Air Conditioner</span>
+                            </div>
+                          </div>
+                          <div class="d-md-none">
+                            <span class="material-icons">person</span>
+                            <span class="material-icons">person</span>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>   
+            </div>    
+          </div>
+          <div class="col-2 text-center d-none d-md-block">
+            <span class="material-icons">person</span>
+            <span class="material-icons">person</span>
+          </div>
+          <!-- room-add and price -->
+          <div class="col-md-4">
+            <div class="row no-gutters bg-secondary bg_md_transparent rounded-bottom">
+                  <div class="col-6 text-center d-flex justify-content-center align-items-center order-1 order-md-0">
+                      <div class="d-none d-md-block">
+                        <h6 class="text_m font-weight-bold mb-0">TWD 1,600</h6>
+                        <small>per night</small>
+                      </div>
+                      <h6 class="d-md-none text_m font-weight-bold mb-0">TWD 1,600</h6>
+                  </div>
+                  <div class="col-6 d-flex justify-content-between align-items-center order-0 order-md-1">
+                    <button class="material-icons btn text_l">remove</button>
+                    <span>0</span>
+                    <button class="material-icons btn text_l">add</button>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <!-- 分隔線 -->
+        <hr class="d-none d-md-block">
+        <!-- Deluxe Suite with Pool -->
+        <div class="row no-gutters align-items-center border border_md_0 rounded-lg">
+          <!-- room-photos -->
+          <div class="col-md-6">
+            <div class="card">
+              <div class="row no-gutters align-items-center">
+                  <div class="col-6 room_photo bg_cover rounded_top-left rounded_md-left "style="background-image:url(assets/images/week8/Rachada1.jpg)"></div>
+                  <div class="col-6">
+                    <div class="card-body pl-3">
+                        <div>
+                          <h4 class="font-weight-bold mb-0">Deluxe
+                            Double Room A
+                          </h4>
+                          <small>1 bed (Queen size)</small>
+                       
+                          <div class="d-flex flex-wrap mb-2">
+                            <!-- Wi-Fi -->
+                            <div class="d-flex  align-items-center w_lg-50 order-0 mb-1">
+                              <span class="material-icons text_m mr-1">wifi</span>
+                              <span class="d-none d-lg-inline-block text_s">Wi-Fi</span>
+                            </div>
+                            <!-- Room Service -->
+                            <div class="d-flex  align-items-center w_lg-50  order-5 order-lg-1 mb-1">
+                              <span class="material-icons text_m mr-1">room_service</span>
+                              <span class="d-none d-lg-inline-block text_s text-nowrap ">Room Service</span>
+                            </div>
+                            <!-- Breakfast -->
+                            <div class="d-flex  align-items-center w_lg-50 order-3 mb-1">
+                              <span class="material-icons text_m mr-1">restaurant</span>
+                              <span class="d-none d-lg-inline-block text_s">Breakfast</span>
+                            </div>
+                            <!-- Smoke Free -->
+                            <div class="d-flex  align-items-center w_lg-50 order-6 order-lg-4 mb-1">
+                              <span class="material-icons text_m mr-1">smoke_free</span>
+                              <span class="d-none d-lg-inline-block text_s text-nowrap">Smoke Free</span>
+                            </div>
+                            <!-- Television -->
+                            <div class="d-flex  align-items-center w_lg-100 order-2 order-lg-5 mb-1">
+                              <span class="material-icons text_m mr-1">personal_video</span>
+                              <span class="d-none d-lg-inline-block text_s">Television</span>
+                            </div>
+                            <!-- Air Conditioner -->
+                            <div class="d-flex  align-items-center w_lg-100 order-4 order-lg-6">
+                              <span class="material-icons text_m mr-1">ac_unit</span>
+                              <span class="d-none d-lg-inline-block text_s">Air Conditioner</span>
+                            </div>
+                          </div>
+                          <div class="d-md-none">
+                            <span class="material-icons">person</span>
+                            <span class="material-icons">person</span>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>   
+            </div>    
+          </div>
+          <div class="col-2 text-center d-none d-md-block">
+            <span class="material-icons">person</span>
+            <span class="material-icons">person</span>
+          </div>
+          <!-- room-add and price -->
+          <div class="col-md-4">
+            <div class="row no-gutters bg-secondary bg_md_transparent rounded-bottom">
+                  <div class="col-6 text-center d-flex justify-content-center align-items-center order-1 order-md-0">
+                    <div class="d-none d-md-block">
+                      <h6 class="text_m font-weight-bold mb-0">TWD 1,980</h6>
+                      <small>per night</small>
+                    </div>
+                    <h6 class="d-md-none text_m font-weight-bold mb-0">TWD 1,980</h6>
+                  </div>
+                  <div class="col-6 d-flex justify-content-between align-items-center order-0 order-md-1">
+                    <button class="material-icons btn text_l">remove</button>
+                    <span>0</span>
+                    <button class="material-icons btn text_l">add</button>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <!-- 分隔線 -->
+        <hr class="d-none d-md-block">
+    </section>
+</main>
+  
+  <!-- footer -->
+  <footer>
+    <div class="bg-secondary">
+      <div class="container py-4">
+        
+        <div class="row align-items-center">
+          <div class="col-md-5 mb-3 mb-md-0">
+            <h2 class="title font-weight-bold text-center text-md-left mb-0">Subscribe for Exclusive Offer</h2>
+          </div>
+          <div class="col-12 col-md-7">
+            <div class="input-group">
+              <input type="email" class="form-control h-auto" placeholder="Your email address" aria-label="useraddress" aria-describedby="useraddress">
+              <div class="input-group-append  ">
+                <a class="btn btn-primary py-3 px-4" id="basic-addon2">SUBSCRIBE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container py-4">
+      <div class="row no-gutters flex-row-reverse align-items-center">
+        <div class="d-none col-lg-3 d-lg-flex">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="material-icons mr-2">language</span>
+              English
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">中文</a>
+              <a class="dropdown-item" href="#">English</a>
+              <a class="dropdown-item" href="#">日本語</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="btn  dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="material-icons mr-2">attach_money</span>
+              TWD
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">US</a>
+              <a class="dropdown-item" href="#">JPN</a>
+              <a class="dropdown-item" href="#">RMB</a>
+            </div>
+          </div>
+        </div>
+        <ul class="footer_list list-unstyled col-12 col-md-6 d-flex mb-0">
+          <li class=" h5 mr-4"><a href="#">FAQs</a></li>
+          <li class=" h5 mr-4"><a href="#">Terms of use</a></li>
+          <li class="h5"><a href="#">Privacy policy</a></li>
+        </ul>
+        <div class="footer_copyright col-12 col-md-6 col-lg-3  h5">
+          © 2020 ALOHA, Inc. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+ 
+  
+  <!-- swiper js -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- bs4 js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" 
+  integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  <!-- ------ -->
+  <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/js/all.js"></script>
+ 
+</body>
+
+</html>
